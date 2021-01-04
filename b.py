@@ -11,10 +11,6 @@ Jobs = [[0 for j in range(n)] for i in range(hours)]
 tc = -2
 
 
-def tasks_left():
-    return len(JobStatus) - JobStatus.count(0)
-
-
 def get_teacher(cur, length):
     return Teachers[cur % length]
 
@@ -22,18 +18,12 @@ def get_teacher(cur, length):
 for i in range(hours):
     tc += 1
     ut = 0
-    TeachersMoreThanTasks = tasks_left() < m
     for j in range(n):
         if JobStatus[j] != 0:
             tc += 1
             ut += 1
             JobStatus[j] -= 1
-            if TeachersMoreThanTasks:
-                tc += 1
             Jobs[i][j] = get_teacher(tc, m)
-            if Jobs[i - 1][j] == Jobs[i][j]:
-                tc += 1
-                Jobs[i][j] = get_teacher(tc, m)
             if ut == m:
                 break
 
