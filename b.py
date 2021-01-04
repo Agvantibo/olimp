@@ -31,8 +31,8 @@ for i in range(hours):
                 tc += 1
             Jobs[i][j] = get_teacher(tc, m)
             if Jobs[i - 1][j] == Jobs[i][j]:
-                Jobs[i][j] += 1
                 tc += 1
+                Jobs[i][j] = get_teacher(tc, m)
             if ut == m:
                 break
 
