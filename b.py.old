@@ -1,0 +1,24 @@
+#!/bin/python3
+
+n, m, k = [int(i) for i in input().split()]
+
+jtt = [[k for j in range(n)] for i in range(m)]
+check_cycles = -1
+checked = False
+output = [[0 for j in range(n)] for i in range(m)]
+
+while not checked:
+	checked = True
+	check_cycles += 1
+	for i in range(m):
+		index = check_cycles + i
+		index = index % m 
+		if jtt[i][index] > 0:
+			jtt[i][index] -= 1
+			checked = False
+			print(index + 1, end=" ")
+		else:
+			print(0, end=" ")
+			continue
+	print()
+
