@@ -1,18 +1,17 @@
 #!/bin/python3
 from math import ceil
 
-n, m, k = [int(i) for i in input().split()]
-# n - jobs, m - tutors, k - passes
+TotalJobs, TotalTeachers, Passes = [int(i) for i in input().split()]
 
-Teachers = [i + 1 for i in range(m)]
-JobStatus = [k for i in range(n)]
-Hours = ceil(k * n / m)
-Jobs = [[0 for j in range(n)] for i in range(Hours)]
+Teachers = [i + 1 for i in range(TotalTeachers)]
+JobStatus = [Passes for i in range(TotalJobs)]
+Hours = ceil(Passes * TotalJobs / TotalTeachers)
+Jobs = [[0 for j in range(TotalJobs)] for i in range(Hours)]
 LockedTeachers = []
 
 
 def write_teacher(i1, i2):
-    for a in range(m):
+    for a in range(TotalTeachers):
         if LockedTeachers[a] == 0:
             if i == 0:
                 LockedTeachers[a] = 1
@@ -22,14 +21,14 @@ def write_teacher(i1, i2):
 
 
 for i in range(Hours):
-    ut = 0
-    LockedTeachers = [0 for f in range(m)]
-    for j in range(n):
+    UsedTeachers = 0
+    LockedTeachers = [0 for f in range(TotalTeachers)]
+    for j in range(TotalJobs):
         if JobStatus[j] > 0:
-            if ut == m:
+            if UsedTeachers == TotalTeachers:
                 break
             else:
-                ut += 1
+                UsedTeachers += 1
                 write_teacher(i, j)
 
 
