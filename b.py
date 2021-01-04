@@ -22,12 +22,13 @@ def get_teacher(cur, length):
 for i in range(hours):
     tc += 1
     ut = 0
+    TeachersMoreThanTasks = tasks_left() < m
     for j in range(n):
         if JobStatus[j] != 0:
             tc += 1
             ut += 1
             JobStatus[j] -= 1
-            if tasks_left() < m:
+            if TeachersMoreThanTasks:
                 tc += 1
             Jobs[i][j] = get_teacher(tc, m)
             if Jobs[i - 1][j] == Jobs[i][j]:
