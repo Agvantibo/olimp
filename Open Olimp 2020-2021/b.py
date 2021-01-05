@@ -1,7 +1,7 @@
 #!/bin/python3
 from math import ceil
 
-# BUGGY TESTS: 6 2 1
+# BUGGY TESTS: 4 2 1
 
 TotalJobs, TotalTeachers, Passes = [int(i) for i in input().split()]
 if TotalJobs == 0 or Passes == 0:
@@ -13,10 +13,6 @@ else:
     UsedTeachers = 0
 
 
-    def flip(boolean):
-        return not boolean
-
-
     def check_job(row, column, value):
         # if JobStatus[column] > 0 and value != 0:
         if value != 0:
@@ -26,25 +22,12 @@ else:
         else:
             return 1
 
-    if TotalJobs % TotalTeachers == 0:
-        ZeroFlag = False
-        for i in range(TotalJobs):
-            if ZeroFlag:
-                ZeroFlag = flip(ZeroFlag)
-                check_job(0, i, 0)
-            else:
-                ZeroFlag = flip(ZeroFlag)
-                UsedTeachers += 1
-                check_job(0, i, UsedTeachers)
-            if UsedTeachers == TotalTeachers:
-                break
 
-    else:
-        for i in range(TotalJobs):
-            UsedTeachers += 1
-            check_job(0, i, i + 1)
-            if UsedTeachers == TotalTeachers:
-                break
+    for i in range(TotalJobs):
+        UsedTeachers += 1
+        check_job(0, i, i + 1)
+        if UsedTeachers == TotalTeachers:
+            break
 
     for i in range(1, Hours):
         for j in range(TotalJobs - 1):
