@@ -1,6 +1,8 @@
 #!/bin/python3
 from math import ceil
 
+# BUGGY TESTS: 4 2 1
+
 TotalJobs, TotalTeachers, Passes = [int(i) for i in input().split()]
 if TotalJobs == 0 or Passes == 0:
     print(0)
