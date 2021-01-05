@@ -9,13 +9,14 @@ if TotalJobs == 0 or Passes == 0:
 else:
     Hours = ceil(Passes * TotalJobs / TotalTeachers)
     Jobs = [[0 for j in range(TotalJobs)] for i in range(Hours)]
-    JobStatus = [Passes for i in range(TotalJobs)]
+    # JobStatus = [Passes for i in range(TotalJobs)]
     UsedTeachers = 0
 
 
     def check_job(row, column, value):
-        if JobStatus[column] > 0 and value != 0:
-            JobStatus[column] -= 1
+        # if JobStatus[column] > 0 and value != 0:
+        if value != 0:
+            # JobStatus[column] -= 1
             Jobs[row][column] = value
             return 0
         else:
