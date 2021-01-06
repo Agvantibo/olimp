@@ -1,7 +1,7 @@
 #!/bin/python3
 from math import ceil
 
-# BUGGY TESTS: 4 2 1
+# BUGGY TESTS: 9 6 3
 
 TotalJobs, TotalTeachers, Passes = [int(i) for i in input().split()]
 if TotalJobs == 0 or Passes == 0:
@@ -11,7 +11,7 @@ else:
     Jobs = [[0 for j in range(TotalJobs)] for i in range(Hours)]
     UsedTeachers = 0
 
-    if TotalJobs % TotalTeachers == 0:
+    if TotalJobs % TotalTeachers == 0 or TotalJobs % Passes == 0:
 
         def get_teacher(cur, length):
             return Teachers[cur % length]
