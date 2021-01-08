@@ -50,6 +50,7 @@ for i in range(Hours):
                 tc += 1
                 TeacherTry = get_teacher(tc, m)
                 if check_originality(i, TeacherTry):
+                    TeacherUnique = True
                     ConfirmedTeacher = TeacherTry
             Jobs[i][j] = ConfirmedTeacher
 

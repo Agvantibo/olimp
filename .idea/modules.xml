@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Shell/.idea/Shell.iml" filepath="$PROJECT_DIR$/../Shell/.idea/Shell.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/olimp.iml" filepath="$PROJECT_DIR$/.idea/olimp.iml" />
     </modules>
   </component>
