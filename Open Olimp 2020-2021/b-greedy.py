@@ -25,7 +25,8 @@ def compose_priority(status_origin, len_status, t_limit):
         if cur_max in status:
             cur_index = status.index(cur_max)
             indices.append(cur_index)
-            status.pop(cur_index)
+            status[cur_index] = -1  # Lock the already-reported targets
+            # it's -1 because -1 couldn't possibly occur naturally in JobStatus.
             if used_teachers == t_limit:
                 return indices
 
