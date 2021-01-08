@@ -31,14 +31,27 @@ def compose_priority(status_origin, len_status, t_limit):
                 return indices
 
 
+def check_originality(current_string, current_char):
+    for f in range(current_string):
+        if Jobs[current_string][f] == current_char:
+            return False
+    return True
+
+
 for i in range(Hours):
     tc += 1
     priorities = compose_priority(JobStatus, n, m)
     for j in priorities:
         if JobStatus[j] != 0:
-            tc += 1
             JobStatus[j] -= 1
-            Jobs[i][j] = get_teacher(tc, m)
+            TeacherUnique = False
+            ConfirmedTeacher = -1
+            while not TeacherUnique:
+                tc += 1
+                TeacherTry = get_teacher(tc, m)
+                if check_originality(i, TeacherTry):
+                    ConfirmedTeacher = TeacherTry
+            Jobs[i][j] = ConfirmedTeacher
 
 print(Hours)
 for i in Jobs:
