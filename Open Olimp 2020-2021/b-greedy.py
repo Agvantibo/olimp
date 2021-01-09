@@ -31,9 +31,12 @@ def compose_priority(status_origin, len_status, t_limit):
                 return indices
 
 
-def check_originality(current_string, current_char):
+def check_originality(current_string, current_char, current_index):
     for f in range(current_string):
-        if Jobs[current_string][f] == current_char:
+        if Jobs[f][current_index] == current_char:
+            return False
+    for f in range(n):
+        if Jobs[current_string][f] == current_char and f != current_index:
             return False
     return True
 
@@ -49,7 +52,7 @@ for i in range(Hours):
             while not TeacherUnique:
                 tc += 1
                 TeacherTry = get_teacher(tc, m)
-                if check_originality(i, TeacherTry):
+                if check_originality(i, TeacherTry, j):
                     TeacherUnique = True
                     ConfirmedTeacher = TeacherTry
             Jobs[i][j] = ConfirmedTeacher
