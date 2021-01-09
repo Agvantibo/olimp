@@ -47,13 +47,11 @@ for i in range(Hours):
     for j in priorities:
         if JobStatus[j] != 0:
             JobStatus[j] -= 1
-            TeacherUnique = False
             ConfirmedTeacher = -1
-            while not TeacherUnique:
+            for w in range(m):
                 tc += 1
                 TeacherTry = get_teacher(tc, m)
                 if check_originality(i, TeacherTry, j):
-                    TeacherUnique = True
                     ConfirmedTeacher = TeacherTry
             Jobs[i][j] = ConfirmedTeacher
 
