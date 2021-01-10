@@ -4,6 +4,8 @@ from math import ceil
 n, m, k = [int(i) for i in input().split()]
 # n - jobs, m - tutors, k - passes
 
+# BUGGY TESTS: 9 3 3;
+
 Teachers = [i + 1 for i in range(m)]
 JobStatus = [k for i in range(n)]
 Hours = ceil(k * n / m)
@@ -40,14 +42,20 @@ def check_originality(current_string, current_char, current_index):
             return False
     return True
 
+FlipFlop = False
 
 for i in range(Hours):
-    tc += 1
+    if FlipFlop:
+        FlipFlop = False
+    else:
+        FlipFlop = True
+        tc += 1
+    tc += m
     priorities = compose_priority(JobStatus, n, m)
     for j in priorities:
         if JobStatus[j] != 0:
             JobStatus[j] -= 1
-            ConfirmedTeacher = -1
+            ConfirmedTeacher = 'F'
             for w in range(m):
                 tc += 1
                 TeacherTry = get_teacher(tc, m)
