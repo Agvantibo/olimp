@@ -1,9 +1,13 @@
 #!/bin/python3
 a, b, c = [int(i) for i in input().split()]
 
-if ((a + b + c) / 3) % 1 != 0:
+if (a + b + c) % 3 != 0:
     print('IMPOSSIBLE')
 else:
-    seq = [a, b, c]
-    seq.sort()
-    print(seq[-1] - seq[1])
+    m = (a + b + c) // 3
+    array = [a, b, c]
+    array.sort()
+    if array[1] <= m:
+        print(array[2] - m)
+    else:
+        print(array[2] - m + array[1] - m)
