@@ -1,7 +1,7 @@
 #!/bin/python3
 
 n, m, k, s = [int(i) for i in input().split()]
-# n - total cities, m - total roads, 
+# n - total cities, m - total roads,
 # k - number of cities w/ gas stations, s - max range
 Roads = []
 for i in range(m):
@@ -9,7 +9,7 @@ for i in range(m):
     Roads[i] = [int(i) for i in input().split()]
 
 GasStations = [int(i) for i in input().split()]
-AvailableCities = []
+AvailableCities = [1]
 NodeScan = [2 for i in range(n)]
 NodeScan[0] = 1
 
