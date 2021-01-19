@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/bin/pypy3
 from sys import exit
 tests = int(input())
 test_scores = [int(i) for i in input().split()]

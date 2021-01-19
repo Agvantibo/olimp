@@ -1,4 +1,5 @@
-#!/bin/python3
+#!/bin/pypy3
+
 a, b, c = [int(i) for i in input().split()]
 
 if (a + b + c) % 3 != 0:
