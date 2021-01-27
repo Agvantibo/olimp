@@ -1,5 +1,6 @@
 #!/bin/pypy3
 from sys import exit
+
 tests = int(input())
 test_scores = [int(i) for i in input().split()]
 final_score = int(input())
