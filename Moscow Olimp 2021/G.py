@@ -2,7 +2,7 @@
 parties, N_bulletins = [int(i) for i in input().split()]
 bulletins = []
 
-for i in N_bulletins:
+for i in range(N_bulletins):
     proc = input()
     if '+' in proc:
         if proc.count('+') == 1:
