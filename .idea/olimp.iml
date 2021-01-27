@@ -7,5 +7,6 @@
     <orderEntry type="jdk" jdkName="PyPy 3.10" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="Shell" />
+    <orderEntry type="module" module-name="SuperAnimation" />
   </component>
 </module>
