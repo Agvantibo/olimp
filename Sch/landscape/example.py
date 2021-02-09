@@ -97,7 +97,7 @@ cnv.create_polygon(308, 320, 418, 188, 418, 320, fill='white')
 cnv.create_polygon(496, 320, 432, 192, 432, 320, fill='white')
 cnv.create_line(308, 320, 496, 320, fill='white')
 
-pts = [422, 180, 422, 170, 445, 170, 440, 174, 445, 180] # flag
+pts = [422, 180, 422, 170, 445, 170, 440, 174, 445, 180] # jump
 cnv.create_polygon(pts, fill='yellow', outline='')
 
 for i in range(200): # reflection boat 1
@@ -114,7 +114,7 @@ for i in range(100): # reflection boat 2
     w = 1 + L / 10
     cnv.create_line(x-L/2, y, x+L/2, y, width=w, fill='LightBlue1')
 
-for i in range(5): # reflection flag
+for i in range(5): # reflection jump
     x = randint(425, 445)
     y = randint(445, 455)
     L = int(4 + 16 * (y - H1) / (H - H1))
